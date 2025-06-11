@@ -28,7 +28,7 @@ namespace CalorieTracker.Users
             {
                 Console.WriteLine($"{i + 1}. {categoryList[i]}");
             }
-
+            //choice for type of food (dairy,meat ...)
             Console.Write("Enter category number: ");
             if (!int.TryParse(Console.ReadLine(), out int categoryChoice) || categoryChoice < 1 || categoryChoice > categoryList.Count)
             {
@@ -46,7 +46,7 @@ namespace CalorieTracker.Users
                 Console.Write($"{i + 1}. ");
                 foodsInCategory[i].DisplayInfo();
             }
-
+            // Shows foods and lets user select food
             Console.Write("Select food number to log: ");
             if (int.TryParse(Console.ReadLine(), out int foodChoice) &&
             foodChoice >= 1 && foodChoice <= foodsInCategory.Count)
