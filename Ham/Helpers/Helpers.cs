@@ -1,4 +1,4 @@
-namespace CalorieTracker.Helpers
+namespace CalorieTracker.Helper
 {
     class Helpers
     {

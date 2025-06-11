@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using CalorieTracker;
 using CalorieTracker.Foods;
 using CalorieTracker.Users;
 using CalorieTracker.Files;
+using CalorieTracker.Helper;
 
 namespace CalorieTracker
 {
@@ -12,13 +12,12 @@ namespace CalorieTracker
         static void Main(string[] args)
         {
             string currentDir = Directory.GetCurrentDirectory();
-            string foodsFile = Path.Combine(currentDir, "foods.txt");
+            string foodsFile = Path.Combine(currentDir, "foods.txt"); //locates dir and file of foods
 
-            Console.Write("Enter username: ");
-            string username = Console.ReadLine();
-            User currentUser = User.LoadFromFile(username);
+            string username = Helpers.ReadString("Enter username: ");
+            User currentUser = User.LoadFromFile(username); //looks for userfiles
 
-            List<Food> availableFoods = FoodFileManager.LoadFoodsFromFile(foodsFile);
+            List<Food> availableFoods = FoodFileManager.LoadFoodsFromFile(foodsFile); //loads foods
 
             bool exit = false;
             while (!exit)
@@ -29,11 +28,9 @@ namespace CalorieTracker
                 Console.WriteLine("3. Log eaten food");
                 Console.WriteLine("4. Show today's total calories");
                 Console.WriteLine("5. Exit");
-            
-                Console.Write("Select option: ");
-                string choice = Console.ReadLine();
 
-                switch (choice)
+                string userChoice = Helpers.ReadString("Select option: ");
+                switch (userChoice)
                 {
                     case "1":
                         FoodFileManager.DisplayFoodsOrganized(availableFoods);
