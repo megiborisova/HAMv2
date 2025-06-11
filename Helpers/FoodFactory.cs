@@ -5,7 +5,7 @@ namespace CalorieTracker.Factory
 {
     public static class FoodFactory
     {
-        public static Food? CreateFood(string category, string name, int calories, double carbs, double protein, double fats, 
+        public static Food? CreateFood(string category, string name, int calories, double carbs, double protein, double fats,
                                        double? volume = null, double? alcoholPercent = null)
         {
             switch (category.ToLower())
@@ -34,5 +34,6 @@ namespace CalorieTracker.Factory
             }
             return null;
         }
+        
     }
 }

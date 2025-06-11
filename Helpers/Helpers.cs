@@ -11,7 +11,7 @@ namespace CalorieTracker.Helpers
             } while (!double.TryParse(Console.ReadLine(), out value) || value < 0);
             return value;
         }
-        
+
 
         public static int ReadInt(string message)
         {
@@ -32,6 +32,7 @@ namespace CalorieTracker.Helpers
             } while (string.IsNullOrWhiteSpace(input));
             return input;
         }
+        
     }
 }
 
