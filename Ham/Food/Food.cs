@@ -5,6 +5,14 @@ using CalorieTracker;
 
 namespace CalorieTracker.Foods
 {
+    [JsonPolymorphic(TypeDiscriminatorPropertyName = "Type")]
+    [JsonDerivedType(typeof(Alcoholic), nameof(Alcoholic))]
+    [JsonDerivedType(typeof(NonAlcoholic), nameof(NonAlcoholic))]
+    [JsonDerivedType(typeof(Fruit), nameof(Fruit))]
+    [JsonDerivedType(typeof(Vegetable), nameof(Vegetable))]
+    [JsonDerivedType(typeof(Dairy), nameof(Dairy))]
+    [JsonDerivedType(typeof(Meat), nameof(Meat))]
+    [JsonDerivedType(typeof(OtherAnimalProduct), nameof(OtherAnimalProduct))]
     public abstract class Food
     {
         public string Name { get; set; }
