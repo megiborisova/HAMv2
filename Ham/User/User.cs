@@ -4,10 +4,11 @@ using System.IO;
 using System.Text.Json;
 using System.Linq;
 using CalorieTracker.Foods;
+using CalorieTracker.Iface;
 
 namespace CalorieTracker.Users
 {
-    public class User
+    public class User : IUser
     {
         public string Username { get; set; } = string.Empty;
         public List<Food> EatenFoods { get; set; } = new List<Food>();

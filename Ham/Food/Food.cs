@@ -1,6 +1,7 @@
 using System;
 using System.Text.Json.Serialization;
 using CalorieTracker;
+using CalorieTracker.Iface;
 
 
 namespace CalorieTracker.Foods
@@ -13,7 +14,7 @@ namespace CalorieTracker.Foods
     [JsonDerivedType(typeof(Dairy), nameof(Dairy))]
     [JsonDerivedType(typeof(Meat), nameof(Meat))]
     [JsonDerivedType(typeof(OtherAnimalProduct), nameof(OtherAnimalProduct))]
-    public abstract class Food
+    public abstract class Food : IFood
     {
         public string Name { get; set; }
         public int Calories { get; set; }
